@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo VMC - Gestión de Estudiantes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Gestión de Estudiantes</h1>
+            <nav>
+                <a href="index.html" class="active">Estudiantes</a>
+                <a href="sensei.html">Senseis</a>
+                <a href="admin.html">Administradores</a>
+            </nav>
+        </header>
+
+        <section id="form-section" class="card">
+            <h2>Añadir/Editar Estudiante</h2>
+            <form id="student-form">
+                <input type="hidden" id="student-id">
+                <input type="text" id="name" placeholder="Nombre completo" required>
+                <input type="number" id="age" placeholder="Edad" required>
+                <input type="text" id="course" placeholder="Curso/Disciplina" required>
+                <input type="number" id="grade" placeholder="Nota Promedio (0.0 - 5.0)" step="0.1" required>
+                <button type="submit" id="submit-button" class="btn primary">Guardar Estudiante</button>
+            </form>
+        </section>
+
+        <section id="list-section">
+            <h2>Lista de Estudiantes</h2>
+            <div id="students-list" class="list-container">
+                </div>
+        </section>
+
+    </div>
+
+    <script src="app.js"></script> 
+</body>
+</html>

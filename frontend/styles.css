@@ -1,0 +1,241 @@
+/* -------------------------------------------------------------------------- */
+/* ESTILOS GLOBALES Y TIPOGRAFÍA (Vercel Style)                               */
+/* -------------------------------------------------------------------------- */
+:root {
+    --primary-color: #0070f3; /* Azul Vercel */
+    --background-color: #fafafa;
+    --card-background: #ffffff;
+    --text-color: #111;
+    --border-color: #eaeaea;
+    --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* CABECERA Y NAVEGACIÓN                                                      */
+/* -------------------------------------------------------------------------- */
+header {
+    text-align: center;
+    padding: 40px 0 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 0 15px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.2s, color 0.2s;
+    font-weight: 600;
+}
+
+nav a:hover, nav a.active {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* -------------------------------------------------------------------------- */
+/* ESTILO DE TARJETA (CARD) PARA EL FORMULARIO                                */
+/* -------------------------------------------------------------------------- */
+.card {
+    background: var(--card-background);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-light);
+    transition: box-shadow 0.3s;
+    margin-bottom: 40px;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* FORMULARIO E INPUTS                                                        */
+/* -------------------------------------------------------------------------- */
+#student-form, #sensei-form, #admin-form {
+    display: grid;
+    /* 2 columnas en desktop, 1 columna en móvil */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 112, 243, 0.2);
+}
+
+/* Botón de Guardar */
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    justify-self: stretch; /* Estira el botón en la rejilla */
+}
+
+.btn.primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn.primary:hover {
+    background-color: #005fcf;
+    transform: translateY(-1px);
+}
+
+/* El botón de guardar ocupa toda la fila en el grid */
+#submit-button {
+    grid-column: 1 / -1; 
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* LISTADO DE ESTUDIANTES/SENSEIS/ADMINS                                      */
+/* -------------------------------------------------------------------------- */
+#list-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.list-container {
+    display: grid;
+    gap: 10px;
+}
+
+.student-item, .sensei-item, .admin-item {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en móvil */
+    justify-content: space-between;
+    align-items: center;
+    background: var(--card-background);
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-light);
+}
+
+.student-item p, .sensei-item p, .admin-item p {
+    flex-grow: 1;
+    margin-right: 20px;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.student-item button, .sensei-item button, .admin-item button {
+    padding: 8px 15px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+/* Botones de acción */
+.student-item button:nth-child(2), .sensei-item button:nth-child(2), .admin-item button:nth-child(2) {
+    /* Botón Editar */
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.student-item button:last-child, .sensei-item button:last-child, .admin-item button:last-child {
+    /* Botón Eliminar */
+    background-color: #ef4444; /* Rojo */
+    color: white;
+}
+
+.student-item button:hover, .sensei-item button:hover, .admin-item button:hover {
+    opacity: 0.9;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* RESPONSIVE DESIGN (Móviles)                                                */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav a {
+        margin: 5px 10px;
+        display: inline-block;
+    }
+    
+    .card {
+        padding: 20px;
+    }
+
+    /* En pantallas pequeñas, la lista de items se reorganiza */
+    .student-item, .sensei-item, .admin-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .student-item p, .sensei-item p, .admin-item p {
+        margin-bottom: 10px;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .student-item button, .sensei-item button, .admin-item button {
+        margin-left: 0;
+        margin-top: 5px;
+        width: 100%;
+    }
+}

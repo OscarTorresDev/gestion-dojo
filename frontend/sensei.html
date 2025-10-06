@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo VMC - Gestión de Senseis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Gestión de Senseis</h1>
+            <nav>
+                <a href="index.html">Estudiantes</a>
+                <a href="sensei.html" class="active">Senseis</a>
+                <a href="admin.html">Administradores</a>
+            </nav>
+        </header>
+
+        <section id="form-section" class="card">
+            <h2>Añadir/Editar Sensei</h2>
+            <form id="sensei-form">
+                <input type="hidden" id="sensei-id">
+                <input type="text" id="name" placeholder="Nombre completo del Sensei" required>
+                <input type="text" id="specialty" placeholder="Especialidad (ej. Karate, Judo)" required>
+                <input type="text" id="rank" placeholder="Rango (ej. 5to Dan, Cinta Negra)" required>
+                <button type="submit" id="submit-button" class="btn primary">Guardar Sensei</button>
+            </form>
+        </section>
+
+        <section id="list-section">
+            <h2>Lista de Senseis</h2>
+            <div id="senseis-list" class="list-container">
+                </div>
+        </section>
+
+    </div>
+
+    <script src="sensei.js"></script> 
+</body>
+</html>
