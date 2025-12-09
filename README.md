@@ -1,9 +1,3 @@
-¡Absolutamente\! Un archivo `README.md` es esencial para cualquier proyecto, especialmente para que tu profesor pueda entenderlo y ejecutarlo fácilmente.
-
-Aquí tienes un `README.md` completo, utilizando el estilo Markdown, que puedes copiar y pegar en un archivo llamado **`README.md`** en la **raíz de tu proyecto** (`C:\gestion-empleado`).
-
------
-
 # README.md
 
 # 🥋 Dojo VMC - Sistema de Gestión de Empleados/Estudiantes
